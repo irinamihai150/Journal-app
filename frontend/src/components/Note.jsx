@@ -1,20 +1,21 @@
 import React from "react"
 import { Card } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
-const Notes = ({ note }) => {
-  const formattedDate= note.date.toLocaleDateString("en-US", {
-    year:"numeric",
-    month:"long",
-    day:"numeric"
-  })
+const Note = ({ note }) => {
+	const formattedDate = note.date.toLocaleDateString("en-US", {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+	})
 	return (
 		<Card className='my-3 p-3 rounded'>
 			<Card.Body>
-				<a href={`/note/${note.id}`}>
+				<Link to={`/note/${note.id}`}>
 					<Card.Title as='div'>
 						<strong>{note.title}</strong>
 					</Card.Title>
-				</a>
+				</Link>
 			</Card.Body>
 			<Card.Text as='p'>{note.content}</Card.Text>
 			<div>
@@ -32,4 +33,4 @@ const Notes = ({ note }) => {
 	)
 }
 
-export default Notes
+export default Note

@@ -1,4 +1,4 @@
-const dummyNotes = [
+const notes = [
 	{
 		id: 1,
 		title: "JavaScript Basics",
@@ -41,4 +41,4 @@ const dummyNotes = [
 	},
 ]
 
-export default dummyNotes
+export default notes

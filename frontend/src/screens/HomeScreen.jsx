@@ -1,20 +1,24 @@
 import React from "react"
 import { Row, Col } from "react-bootstrap"
-import dummyNotes from "../notes"
-import Notes from "../components/Notes"
+import notes from "../notes"
+import Note from "../components/Note"
+import CreateNotePage from "./CreateNotePage"
 
 const HomeScreen = () => {
 	return (
-		<div>
+		<>
 			<h1>My Notes</h1>
 			<Row>
-				{dummyNotes.map((note) => (
+				<CreateNotePage />
+			</Row>
+			<Row>
+				{notes.map((note) => (
 					<Col key={note.id} sm={12} md={6} lg={4} xl={3}>
-						<Notes note={note} />
+						<Note note={note} />
 					</Col>
 				))}
 			</Row>
-		</div>
+		</>
 	)
 }
 
